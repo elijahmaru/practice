@@ -1,55 +1,97 @@
 <!doctype html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Есяков Илья</title>
-    <meta name="description" content="Первое задание для летней практике" />
-</head>
+    <meta name="description" content="Первое задание для летней практики" />
+  </head>
 
-<body>
-    <header class="myHeader">
+  <body>
+    <div class="page-wrapper">
+      <header class="myHeader">
         <h1 class="h1Head">Резюме</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Обо мне</a></li>
-                <li><a href="#">Мое хобби</a></li>
-                <li><a href="#">Контакты</a></li>
-            </ul>
+        <nav class="mainNav">
+          <ul>
+            <li><a href="#">Обо мне</a></li>
+            <li><a href="#">Мое хобби</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
         </nav>
-    </header>
-    <main>
-        <section class="aboutMe">
-            <h2>Обо мне</h2>
-            <p>
-                Я студент первого курса по программе "Анализ данных и искуственный
-                инелект". Я поступил на него не только потому что я интересуюсь ml и
-                олимпиадным програмированием, но и потому что mlщики это единстыенные
-                люди которые могут позволить себе тот уровень жизни который я хочу.
-                <br><img class="profilePhoto" src="selfie.png" alt="фотка" />
-            </p>
-        </section>
-        <section class="myHobby">
-            <h2>Мое хобби</h2>
-            <article>
-                Моя любовь к одежде началась с интереса ранниму творчества erd. Я
-                постепенно перешёл на MA+, CCP и proffessor E.
-            </article>
-        </section>
-    </main>
-    <aside class="sidePanel">
-        <h3>Любимые бренды</h3>
-        <ol>
-            <p>enfants riches depreme</p>
-            <p>profesor e</p>
-            <p>M.A+</p>
-        </ol>
-    </aside>
-    <footer class="myFooter">
-        © elijahcorp 2026 | socials:
-        <a href="https://github.com/elijahmaru" target="_blank">github</a>
-    </footer>
-</body>
+      </header>
 
+      <main class="mainContent">
+        <section class="aboutMe">
+          <h2>Обо мне</h2>
+          <div class="aboutContent">
+            <p>
+              Я студент первого курса по программе "Анализ данных и
+              искусственный интеллект". Я поступил на неё не только потому, что
+              интересуюсь ML и олимпиадным программированием, но и потому, что
+              специалисты в сфере ML — это единственные люди, которые могут
+              позволить себе тот уровень жизни, который я хочу.
+            </p>
+            <img
+              class="profilePhoto"
+              src="selfie.png"
+              alt="Фотография профиля"
+            />
+          </div>
+        </section>
+
+        <section class="myHobby">
+          <h2>Мое хобби</h2>
+          <article>
+            Моя любовь к одежде началась с интереса к раннему творчеству ERD. Я
+            постепенно перешёл на MA+, CCP и Professor E.
+          </article>
+        </section>
+
+        <section class="projectsSection">
+          <h2>Мои проекты</h2>
+          <div class="projectsGrid">
+            <div class="projectCard">
+              <div class="cardImageStub">📊</div>
+              <h3>ML Предсказание</h3>
+              <p>Модель для прогнозирования стоимости андеграундной одежды.</p>
+            </div>
+            <div class="projectCard">
+              <div class="cardImageStub">🧠</div>
+              <h3>NLP Классификатор</h3>
+              <p>Анализ тональности отзывов на новые коллекции брендов.</p>
+            </div>
+            <div class="projectCard">
+              <div class="cardImageStub">🤖</div>
+              <h3>Algo Bot</h3>
+              <p>
+                Скрипт для автоматизации решения задач по олимпиадному
+                программированию.
+              </p>
+            </div>
+            <div class="projectCard">
+              <div class="cardImageStub">🌐</div>
+              <h3>Парсер сайтов</h3>
+              <p>Сбор данных о наличии вещей MA+ и CCP на ресейл-площадках.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidePanel">
+        <h3>Любимые бренды</h3>
+        <ol class="brandsList">
+          <li>Enfants Riches Déprimés</li>
+          <li>Professor E</li>
+          <li>M.A+</li>
+          <li>Carol Christian Poell</li>
+        </ol>
+      </aside>
+
+      <footer class="myFooter">
+        <span>© elijahcorp 2026</span>
+        <a href="https://github.com" target="_blank">GitHub</a>
+      </footer>
+    </div>
+  </body>
 </html>
