@@ -1,0 +1,39 @@
+body {
+  background-color: #1b1e28;
+  font-family: Geist Mono;
+  font-weight: 400;
+  font-size: 14px;
+  color: #cdd6f4;
+  margin: 0;
+}
+.myHeader,
+.myFooter {
+  color: #89b4fa;
+  padding: 20px;
+}
+aside {
+  padding: 20px;
+}
+main {
+  padding: 20px;
+  margin-bottom: 12px;
+}
+.profilePhoto {
+  width: 300px;
+  border: 3px solid #89b4fa;
+  border-radius: 12px;
+}
+
+.h1Head {
+  color: #f5e0dc;
+  font-size: 28px;
+  text-align: center;
+}
+a:link {
+  color: #89b4fa;
+  text-decoration: none;
+}
+a:visited {
+  color: #fac089;
+  text-decoration: none;
+}
