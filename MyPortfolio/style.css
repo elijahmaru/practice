@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #1b1e28;
   font-family: "Geist Mono", monospace;
@@ -9,10 +13,11 @@ body {
 
 .page-wrapper {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto auto auto;
   grid-template-areas:
     "header  header"
-    "aside    main"
+    "aside   main"
     "footer  footer";
   min-height: 100vh;
   gap: 24px;
@@ -38,6 +43,7 @@ body {
   align-items: center;
   color: #89b4fa;
   border-bottom: 1px solid #313244;
+  padding-bottom: 15px;
 }
 
 .mainNav ul {
@@ -54,6 +60,7 @@ body {
   align-items: center;
   color: #89b4fa;
   border-top: 1px solid #313244;
+  padding-top: 15px;
 }
 
 .aboutContent {
@@ -61,16 +68,11 @@ body {
   align-items: flex-start;
   gap: 20px;
 }
-.projectsSection {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
+
 .projectsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  flex-grow: 1;
 }
 
 .projectCard {
@@ -78,6 +80,7 @@ body {
   flex-direction: column;
   gap: 10px;
   background-color: #252837;
+  border: 1px solid #313244;
   border-radius: 8px;
   padding: 16px;
 }
@@ -96,6 +99,7 @@ body {
   background-color: #252837;
   border-radius: 8px;
   padding: 20px;
+  height: fit-content;
 }
 
 .brandsList {
@@ -112,7 +116,8 @@ body {
 }
 
 .profilePhoto {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   height: auto;
   border: 3px solid #89b4fa;
   border-radius: 12px;
@@ -138,4 +143,42 @@ a:link {
 a:visited {
   color: #fac089;
   text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .page-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "footer";
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .myHeader {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .aboutContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .myFooter {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
