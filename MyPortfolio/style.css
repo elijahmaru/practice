@@ -13,7 +13,7 @@ body {
 
 .page-wrapper {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: auto auto auto;
   grid-template-areas:
     "header  header"
@@ -84,7 +84,10 @@ body {
   border-radius: 8px;
   padding: 16px;
 }
-
+.projectCard:hover {
+  transform: translateY(-4px);
+  border-color: #89b4fa;
+}
 .cardImageStub {
   display: flex;
   justify-content: center;
@@ -135,16 +138,21 @@ h3 {
   color: #f5e0dc;
   margin: 0;
 }
-
+:link,
+a:visited {
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    text-decoration 0.3s ease;
+}
 a:link {
   color: #89b4fa;
-  text-decoration: none;
 }
 a:visited {
   color: #fac089;
-  text-decoration: none;
 }
 a:hover {
+  text-decoration: none;
   text-decoration: underline;
 }
 
@@ -155,6 +163,7 @@ a:hover {
       "header"
       "main"
       "aside"
+      "section"
       "footer";
     gap: 16px;
     padding: 16px;
@@ -181,4 +190,71 @@ a:hover {
     gap: 10px;
     text-align: center;
   }
+}
+
+.cardForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 632px;
+  background-color: #252837;
+  border: 1px solid #313244;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #1e1e2e;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.formCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formCard input,
+.formCard textarea {
+  background-color: #1e1e2e;
+  border: 1px solid #313244;
+  border-radius: 6px;
+  color: #cdd6f4;
+  font-family: "Geist Mono", monospace;
+  padding: 12px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.formCard input:focus,
+.formCard textarea:focus {
+  outline: none;
+  border-color: #89b4fa;
+}
+.submitButton {
+  background-color: #89b4fa;
+  color: #1b1e28;
+  border: none;
+  border-radius: 6px;
+  font-family: "Geist Mono", monospace;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 24px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s ease;
+}
+.submitButton:hover {
+  background-color: #fac089;
+  transform: scale(0.98);
+}
+.submitBtn:active {
+  transform: scale(0.98);
 }
