@@ -1,4 +1,4 @@
-function filter(age, height) {
+function filter(age: number, height: number): void {
     if (age < 8) {
         console.log("Вход запрещен, слишком мал");
     } else if (age >= 8 && age <= 18 && height < 140) {
