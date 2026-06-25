@@ -13,7 +13,7 @@ body {
 
 .page-wrapper {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 3.5fr;
   grid-template-rows: auto auto auto;
   grid-template-areas:
     "header  header"
@@ -44,6 +44,58 @@ body {
   color: #89b4fa;
   border-bottom: 1px solid #313244;
   padding-bottom: 15px;
+}
+
+.btn-open,
+.btn-close {
+  background-color: #89b4fa;
+  color: #1b1e28;
+  border: none;
+  border-radius: 6px;
+  font-family: "Geist Mono", monospace;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-open:hover,
+.btn-close:hover {
+  background-color: #fac089;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(27, 30, 40, 0.75);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(420px, calc(100% - 32px));
+  background-color: #252837;
+  border: 1px solid #313244;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.btn-close {
+  align-self: flex-end;
 }
 
 .mainNav ul {
@@ -88,6 +140,7 @@ body {
   transform: translateY(-4px);
   border-color: #89b4fa;
 }
+
 .cardImageStub {
   display: flex;
   justify-content: center;
@@ -233,6 +286,18 @@ a:hover {
   width: 100%;
   box-sizing: border-box;
 }
+
+.formCard textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.char-counter {
+  color: #89b4fa;
+  margin: 0;
+  text-align: right;
+}
+
 .formCard input:focus,
 .formCard textarea:focus {
   outline: none;

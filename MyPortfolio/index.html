@@ -1,133 +1,134 @@
 <!doctype html>
 <html lang="ru">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Есяков Илья</title>
     <meta name="description" content="Первое задание для летней практики" />
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="page-wrapper">
-      <header class="myHeader">
-        <h1 class="h1Head">Резюме</h1>
-        <nav class="mainNav">
-          <ul>
-            <li><a href="#">Обо мне</a></li>
-            <li><a href="#">Мое хобби</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
-        </nav>
-      </header>
+        <header class="myHeader">
+            <h1 class="h1Head">Резюме</h1>
+            <nav class="mainNav">
+                <ul>
+                    <li><a href="#">Обо мне</a></li>
+                    <li><a href="#">Мое хобби</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="btn-open" type="button">Открыть</button>
+        </header>
 
-      <main class="mainContent">
-        <section class="aboutMe">
-          <h2>Обо мне</h2>
-          <div class="aboutContent">
-            <p>
-              Я студент первого курса по программе "Анализ данных и
-              искусственный интеллект". Я поступил на неё не только потому, что
-              интересуюсь ML и олимпиадным программированием, но и потому, что
-              специалисты в сфере ML — это единственные люди, которые могут
-              позволить себе тот уровень жизни, который я хочу.
-            </p>
-            <img
-              class="profilePhoto"
-              src="selfie.png"
-              alt="Фотография профиля"
-            />
-          </div>
-        </section>
+        <div class="modal">
+            <div class="modalContent">
+                <button class="btn-close" type="button">Закрыть</button>
+                <h2>Всплывающее окно</h2>
+                <p>Это модальное окно открывается и закрывается по клику.</p>
+            </div>
+        </div>
 
-        <section class="myHobby">
-          <h2>Мое хобби</h2>
-          <article>
-            Моя любовь к одежде началась с интереса к раннему творчеству ERD. Я
-            постепенно перешёл на MA+, CCP и Professor E.
-          </article>
-        </section>
+        <main class="mainContent">
+            <section class="aboutMe">
+                <h2>Обо мне</h2>
+                <div class="aboutContent">
+                    <p>
+                        Я студент первого курса по программе "Анализ данных и
+                        искусственный интеллект". Я поступил на неё не только потому, что
+                        интересуюсь ML и олимпиадным программированием, но и потому, что
+                        специалисты в сфере ML — это единственные люди, которые могут
+                        позволить себе тот уровень жизни, который я хочу.
+                    </p>
+                    <img class="profilePhoto" src="selfie.png" alt="Фотография профиля" />
+                </div>
+            </section>
 
-        <section class="projectsSection">
-          <h2>Мои проекты</h2>
-          <div class="projectsGrid">
-            <div class="projectCard">
-              <div class="cardImageStub">📊</div>
-              <h3>ML Предсказание</h3>
-              <p>Модель для прогнозирования стоимости андеграундной одежды.</p>
-            </div>
-            <div class="projectCard">
-              <div class="cardImageStub">🧠</div>
-              <h3>NLP Классификатор</h3>
-              <p>Анализ тональности отзывов на новые коллекции брендов.</p>
-            </div>
-            <div class="projectCard">
-              <div class="cardImageStub">🤖</div>
-              <h3>Algo Bot</h3>
-              <p>
-                Скрипт для автоматизации решения задач по олимпиадному
-                программированию.
-              </p>
-            </div>
-            <div class="projectCard">
-              <div class="cardImageStub">🌐</div>
-              <h3>Парсер сайтов</h3>
-              <p>Сбор данных о наличии вещей MA+ и CCP на ресейл-площадках.</p>
-            </div>
-          </div>
-        </section>
+            <section class="myHobby">
+                <h2>Мое хобби</h2>
+                <article>
+                    Моя любовь к одежде началась с интереса к раннему творчеству ERD. Я
+                    постепенно перешёл на MA+, CCP и Professor E.
+                </article>
+            </section>
 
-        <section class="cardForm">
-          <h2>Запросить demo</h2>
-          <form class="form" action="#" method="post">
-            <div class="formCard">
-              <label for="userName">Ваше имя</label>
-              <input
-                type="text"
-                id="userName"
-                name="name"
-                placeholder="Иван Иванов"
-                required
-              />
-            </div>
-            <div class="formCard">
-              <label for="userEmail">ваш email</label>
-              <input
-                type="email"
-                id="userEmail"
-                name="email"
-                placeholder="example@mail.com"
-                required
-              />
-            </div>
-            <div class="formCard">
-              <label for="userInfo">что вам интересно</label>
-              <input
-                type="userInfo"
-                id="userInfo"
-                name="info"
-                placeholder="интересно ..."
-              />
-            </div>
-            <button type="submit" class="submitButton">отправить</button>
-          </form>
-        </section>
-      </main>
+            <section class="projectsSection">
+                <h2>Мои проекты</h2>
+                <div class="projectsGrid">
+                    <div class="projectCard">
+                        <div class="cardImageStub">📊</div>
+                        <h3>ML Предсказание</h3>
+                        <p>Модель для прогнозирования стоимости андеграундной одежды.</p>
+                    </div>
+                    <div class="projectCard">
+                        <div class="cardImageStub">🧠</div>
+                        <h3>NLP Классификатор</h3>
+                        <p>Анализ тональности отзывов на новые коллекции брендов.</p>
+                    </div>
+                    <div class="projectCard">
+                        <div class="cardImageStub">🤖</div>
+                        <h3>Algo Bot</h3>
+                        <p>
+                            Скрипт для автоматизации решения задач по олимпиадному
+                            программированию.
+                        </p>
+                    </div>
+                    <div class="projectCard">
+                        <div class="cardImageStub">🌐</div>
+                        <h3>Парсер сайтов</h3>
+                        <p>Сбор данных о наличии вещей MA+ и CCP на ресейл-площадках.</p>
+                    </div>
+                </div>
+            </section>
 
-      <aside class="sidePanel">
-        <h3>Любимые бренды</h3>
-        <ol class="brandsList">
-          <li>Enfants Riches Déprimés</li>
-          <li>Professor E</li>
-          <li>M.A+</li>
-          <li>Carol Christian Poell</li>
-        </ol>
-      </aside>
+            <section class="aboutBrands">
+                <h2>Про бренды</h2>
+            </section>
 
-      <footer class="myFooter">
-        <span>© elijahcorp 2026</span>
-        <a href="https://github.com" target="_blank">GitHub</a>
-      </footer>
+            <section class="cardForm">
+                <h2>Запросить demo</h2>
+                <form class="form contact-form" action="#" method="post">
+                    <div class="formCard">
+                        <label for="userName">Ваше имя</label>
+                        <input type="text" id="userName" name="name" placeholder="Иван Иванов" required />
+                    </div>
+                    <div class="formCard">
+                        <label for="userEmail">ваш email</label>
+                        <input type="email" id="userEmail" name="email" placeholder="example@mail.com" required />
+                    </div>
+                    <div class="formCard">
+                        <label for="userInfo">что вам интересно</label>
+                        <input type="userInfo" id="userInfo" name="info" placeholder="интересно ..." />
+                    </div>
+                    <div class="formCard">
+                        <label for="userMessage">сообщение</label>
+                        <textarea class="message-input" id="userMessage" name="message" maxlength="100"
+                            placeholder="Введите сообщение"></textarea>
+                        <p class="char-counter">0/100</p>
+                    </div>
+                    <button type="submit" class="submitButton">отправить</button>
+                </form>
+            </section>
+        </main>
+
+        <aside class="sidePanel">
+            <h3>Любимые бренды</h3>
+            <ol class="brandsList">
+                <li>Enfants Riches Déprimés</li>
+                <li>Professor E</li>
+                <li>M.A+</li>
+                <li>Carol Christian Poell</li>
+            </ol>
+        </aside>
+
+        <footer class="myFooter">
+            <span>© elijahcorp 2026</span>
+            <a href="https://github.com" target="_blank">GitHub</a>
+        </footer>
     </div>
-  </body>
+    <script src="./script.js"></script>
+</body>
+
 </html>

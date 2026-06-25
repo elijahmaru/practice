@@ -1,77 +1,40 @@
-type accountData = {
-    id: number;
-    isVerified: boolean;
-    createdUsingGoogleAcc: boolean;
-    is2F: boolean;
-    usesOnly2F: null | boolean;
-    password: string | null;
-};
-
-type brandInfo = {
-    id: number;
-    brandName: string;
-    brandCategory:
-    | "luxury"
-    | "artisinal"
-    | "luxury house"
-    | "mass market"
-    | "designer brand";
-    soldCategories: string[];
-    sales: number;
-};
-
-type styleSettings = {
-    theme: "dark" | "light";
-    language: "ru" | "eng";
-};
-
-type portfolioData = {
-    profile: accountData;
-    projects: brandInfo[];
-    settings: styleSettings;
-};
-
-const enfantsRichesDeprimes: brandInfo = {
+"use strict";
+const enfantsRichesDeprimes = {
     id: 1,
     brandName: "Enfants Riches Déprimés",
     brandCategory: "designer brand",
     soldCategories: ["Одежда", "Обувь", "Аксессуары"],
     sales: 153,
 };
-
-const maisonMargiela: brandInfo = {
+const maisonMargiela = {
     id: 2,
     brandName: "Maison Margiela",
     brandCategory: "luxury house",
     soldCategories: ["Одежда", "Обувь", "Аксессуары"],
     sales: 45,
 };
-
-const acneStudios: brandInfo = {
+const acneStudios = {
     id: 3,
     brandName: "carhartt",
     brandCategory: "mass market",
     soldCategories: ["Одежда", "Обувь", "Сумки"],
     sales: 100,
 };
-
-const rickOwens: brandInfo = {
+const rickOwens = {
     id: 4,
     brandName: "Rick Owens",
     brandCategory: "designer brand",
     soldCategories: ["Одежда", "Обувь", "Аксессуары", "Сумки"],
     sales: 218,
 };
-
-const hermes: brandInfo = {
+const hermes = {
     id: 5,
     brandName: "Hermès",
     brandCategory: "luxury house",
     soldCategories: ["Сумки", "Аксессуары"],
     sales: 187,
 };
-
-const portfolio: portfolioData = {
+const portfolio = {
     profile: {
         id: 1,
         isVerified: true,
@@ -92,44 +55,33 @@ const portfolio: portfolioData = {
         language: "ru",
     },
 };
-
 const keys = Object.keys(portfolio.profile);
-
-const stringified: string[] = portfolio.projects
+const stringified = portfolio.projects
     .filter((project) => project.sales > 100)
-    .map(
-        (project) =>
-            `Бренд ${project.brandName} из категории ${project.brandCategory}`,
-    );
-
-var likesSum: number = portfolio.projects.reduce((accumulator, currentItem) => {
+    .map((project) => `Бренд ${project.brandName} из категории ${project.brandCategory}`);
+var likesSum = portfolio.projects.reduce((accumulator, currentItem) => {
     return accumulator + currentItem.sales;
 }, 0);
-
-const allSoldCategories: Set<string> = new Set();
+const allSoldCategories = new Set();
 portfolio.projects.forEach((brand) => {
     brand.soldCategories.forEach((category) => {
         allSoldCategories.add(category);
     });
 });
 // spread operator for this task
-
-const aboutBrands: HTMLElement | null = document.querySelector(".aboutBrands");
-
+const aboutBrands = document.querySelector(".aboutBrands");
 if (aboutBrands === null) {
     throw new Error(".aboutBrands not found");
 }
-
-const brandsGrid: HTMLDivElement = document.createElement("div");
+const brandsGrid = document.createElement("div");
 brandsGrid.classList.add("projectsGrid");
 aboutBrands.append(brandsGrid);
-
 portfolio.projects.forEach((brand) => {
-    let brandCard: HTMLDivElement = document.createElement("div");
+    let brandCard = document.createElement("div");
     brandCard.classList.add("projectCard");
-    let brandName: HTMLElement = document.createElement("h3");
+    let brandName = document.createElement("h3");
     brandName.textContent = brand.brandName;
-    let emoji: string;
+    let emoji;
     switch (brand.brandCategory) {
         case "luxury":
             emoji = "💎";
@@ -150,9 +102,9 @@ portfolio.projects.forEach((brand) => {
             emoji = "";
             break;
     }
-    let brandType: HTMLDivElement = document.createElement("div");
+    let brandType = document.createElement("div");
     brandType.textContent = `Тип бренда: ${emoji}`;
-    let soldCategories: string = "";
+    let soldCategories = "";
     brand.soldCategories.forEach((category) => {
         if (soldCategories !== "") {
             soldCategories += ", ";
@@ -175,64 +127,48 @@ portfolio.projects.forEach((brand) => {
                 break;
         }
     });
-    let soldCategoriesElement: HTMLDivElement = document.createElement("p");
+    let soldCategoriesElement = document.createElement("p");
     soldCategoriesElement.textContent = `Категории товаров: ${soldCategories}`;
-    let sold: HTMLDivElement = document.createElement("p");
+    let sold = document.createElement("p");
     sold.textContent = `Продажи ${brand.sales}`;
     brandCard.append(brandName, brandType, soldCategoriesElement, sold);
     brandsGrid.append(brandCard);
 });
-
-const openModalButton: HTMLButtonElement | null =
-    document.querySelector(".btn-open");
-const closeModalButton: HTMLButtonElement | null =
-    document.querySelector(".btn-close");
-const modal: HTMLDivElement | null = document.querySelector(".modal");
-const contactForm: HTMLFormElement | null =
-    document.querySelector(".contact-form");
-const messageInput: HTMLTextAreaElement | null =
-    document.querySelector(".message-input");
-const charCounter: HTMLParagraphElement | null =
-    document.querySelector(".char-counter");
-
+const openModalButton = document.querySelector(".btn-open");
+const closeModalButton = document.querySelector(".btn-close");
+const modal = document.querySelector(".modal");
+const contactForm = document.querySelector(".contact-form");
+const messageInput = document.querySelector(".message-input");
+const charCounter = document.querySelector(".char-counter");
 if (openModalButton === null) {
     throw new Error(".btn-open not found");
 }
-
 if (closeModalButton === null) {
     throw new Error(".btn-close not found");
 }
-
 if (modal === null) {
     throw new Error(".modal not found");
 }
-
 if (contactForm === null) {
     throw new Error(".contact-form not found");
 }
-
 if (messageInput === null) {
     throw new Error(".message-input not found");
 }
-
 if (charCounter === null) {
     throw new Error(".char-counter not found");
 }
-
 openModalButton.addEventListener("click", () => {
     modal.classList.add("active");
 });
-
 closeModalButton.addEventListener("click", () => {
     modal.classList.remove("active");
 });
-
 contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log("Форма перехвачена, перезагрузки не было!");
 });
-
 messageInput.addEventListener("input", (event) => {
-    const currentText = (event.target as HTMLTextAreaElement).value;
+    const currentText = event.target.value;
     charCounter.textContent = `${currentText.length}/100`;
 });
